@@ -95,3 +95,51 @@ const adresaHTML = `
 document.getElementById("vysledek").innerHTML += adresaHTML;
 }
 
+//Registrace na očkování
+function zpracovatRegistraci() {
+    
+const jmeno = document.getElementById("jmeno").value;
+const vek = parseInt(document.getElementById("vek").value, 10);
+const heslo = document.getElementById("heslo").value;
+
+let vysledek = "";
+
+
+if (vek >= 65) {
+        vysledek += "<p>Věk v pořádku.</p>";
+
+
+if (heslo.length > 8) {
+        vysledek += "<p>Heslo v pořádku.</p>";
+    } else {
+        vysledek += "<p>Slabé heslo.</p>";
+        }
+    } else {
+        vysledek += "<p>Nízký věk.</p>";
+    }
+
+document.getElementById("vysledek").innerHTML += vysledek; 
+}
+
+function zpracovatVstupenku() {
+    // Získání věku od uživatele
+    const vek = parseInt(document.getElementById("vek").value, 10);
+
+    // Základní cena
+    const plnaCena = 12;
+    let cena = 0;
+
+    // Výpočet ceny dle věku
+    if (vek < 6) {
+        cena = 0; // Děti do 6 let mají vstup zdarma
+    } else if (vek >= 6 && vek <= 26) {
+        cena = Math.round(plnaCena * 0.65); // Studenti a žáci platí 65 % ceny
+    } else if (vek >= 27 && vek <= 64) {
+        cena = plnaCena; // Dospělí platí plnou cenu
+    } else {
+        cena = Math.round(plnaCena * 0.50); // Senioři platí 50 % ceny
+    }
+
+    // Výpis ceny do stránky
+    document.getElementById("vysledek").innerHTML += `<p>Vaše cena vstupenky je ${cena} euro.</p>`;
+}
