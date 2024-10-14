@@ -78,3 +78,20 @@ const vysledek = document.getElementById("vysledek");
         }
 
 
+// Doručování
+function zpracovatAdresu() {
+
+const ulice = document.getElementById("ulice").value;
+const cislo = document.getElementById("cislo").value;
+const mesto = document.getElementById("mesto").value;
+const psc = document.getElementById("psc").value;
+const adresaHTML = `
+                <address>
+                    <p>${ulice} ${cislo}</p>
+                    <p>${psc} ${mesto}</p>
+                </address>
+            `;
+
+document.getElementById("vysledek").innerHTML += adresaHTML;
+}
+
