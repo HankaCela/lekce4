@@ -58,3 +58,23 @@ document.body.innerHTML += `
 `;
 
 
+
+function zpracovatEmail() {
+           
+const email = document.getElementById("emailInput").value;
+const atIndex = email.indexOf("@");
+const userName = email.slice(0, atIndex);
+const domain = email.slice(atIndex + 1);
+const parsedEmail = {
+                userName: userName,
+                domain: domain
+};
+
+const vysledek = document.getElementById("vysledek");
+        vysledek.innerHTML += `
+                <p><strong>Uživatelské jméno:</strong> ${parsedEmail.userName}</p>
+                <p><strong>Doména:</strong> ${parsedEmail.domain}</p>
+            `;
+        }
+
+
