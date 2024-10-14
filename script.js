@@ -58,7 +58,7 @@ document.body.innerHTML += `
 `;
 
 
-
+//Emaily
 function zpracovatEmail() {
            
 const email = document.getElementById("emailInput").value;
