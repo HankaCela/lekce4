@@ -121,25 +121,25 @@ if (heslo.length > 8) {
 document.getElementById("vysledek").innerHTML += vysledek; 
 }
 
+//Cena vstupenky
 function zpracovatVstupenku() {
-    // Získání věku od uživatele
-    const vek = parseInt(document.getElementById("vek").value, 10);
+    
+const vek = parseInt(document.getElementById("vek").value, 10);
 
-    // Základní cena
+
     const plnaCena = 12;
     let cena = 0;
 
-    // Výpočet ceny dle věku
+    
     if (vek < 6) {
-        cena = 0; // Děti do 6 let mají vstup zdarma
+        cena = 0; 
     } else if (vek >= 6 && vek <= 26) {
-        cena = Math.round(plnaCena * 0.65); // Studenti a žáci platí 65 % ceny
+        cena = Math.round(plnaCena * 0.65);
     } else if (vek >= 27 && vek <= 64) {
-        cena = plnaCena; // Dospělí platí plnou cenu
+        cena = plnaCena; 
     } else {
-        cena = Math.round(plnaCena * 0.50); // Senioři platí 50 % ceny
+        cena = Math.round(plnaCena * 0.50); 
     }
 
-    // Výpis ceny do stránky
-    document.getElementById("vysledek").innerHTML += `<p>Vaše cena vstupenky je ${cena} euro.</p>`;
+document.getElementById("vysledek").innerHTML = `<p>Vaše cena vstupenky je ${cena} euro.</p>`;
 }
