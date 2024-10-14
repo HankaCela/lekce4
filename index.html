@@ -17,11 +17,20 @@
 
     <div id="vysledek"></div>
 
-    <h1>Zadejte váš e-mail</h1>
+    <h1>Zadejte vaši doručovací adresu</h1>
+    <label for="ulice">Ulice:</label>
+    <input type="text" id="ulice" placeholder="Zadejte ulici"><br><br>
 
-    <!-- Vstupní pole pro e-mail -->
-    <input type="text" id="emailInput" placeholder="Zadejte e-mail">
-    <button onclick="zpracovatEmail()">Odeslat</button>
+    <label for="cislo">Číslo domu:</label>
+    <input type="text" id="cislo" placeholder="Zadejte číslo domu"><br><br>
+
+    <label for="mesto">Město:</label>
+    <input type="text" id="mesto" placeholder="Zadejte město"><br><br>
+
+    <label for="psc">PSČ:</label>
+    <input type="text" id="psc" placeholder="Zadejte PSČ"><br><br>
+
+    <button onclick="zpracovatAdresu()">Odeslat</button>
 
     <div id="vysledek"></div>
 </body>
